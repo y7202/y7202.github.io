@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yagnesh Dikshit | Engineering Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Yagnesh Harshvadan Dikshit - Electrical & Computer Engineering graduate specializing in power systems, industrial automation, renewable energy, and IoT-based monitoring solutions."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #071120;
+      --bg2: #0b1730;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-2: rgba(255, 255, 255, 0.04);
+      --line: rgba(255, 255, 255, 0.09);
+      --text: #f4f7ff;
+      --muted: #b7c3de;
+      --accent: #78a7ff;
+      --accent2: #6ee7f9;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(120, 167, 255, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(110, 231, 249, 0.10), transparent 22%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 17, 32, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #06111f;
+      box-shadow: var(--shadow);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: flex;
+      align-items: center;
+      padding: 56px 0 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #dfe7ff;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #ffffff 0%, #c8dbff 45%, #a5f3fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 740px;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      border: none;
+      color: #071120;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .btn:hover,
+    .card:hover,
+    .contact-card:hover,
+    .highlight:hover,
+    .gallery img:hover,
+    .hero-project-image:hover,
+    .project-block:hover,
+    .experience-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .hero-card {
+      border-radius: 28px;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel {
+      background: rgba(8, 16, 30, 0.55);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+
+    .hero-panel:last-child {
+      margin-bottom: 0;
+    }
+
+    .hero-panel h3 {
+      margin-bottom: 12px;
+      font-size: 1.02rem;
+      color: #e6eeff;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .meta-box {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .meta-box small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .meta-box strong {
+      font-size: 0.96rem;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 38px;
+    }
+
+    .grid-3,
+    .grid-2,
+    .highlights {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .highlights {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 26px;
+    }
+
+    .card,
+    .contact-card,
+    .highlight,
+    .about-card,
+    .experience-card,
+    .project-block {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .about-card {
+      padding: 30px;
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .highlight {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .highlight h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      color: #dcebff;
+    }
+
+    .highlight p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      font-size: 1.08rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .card li + li {
+      margin-top: 7px;
+    }
+
+    .experience-grid {
+      display: grid;
+      gap: 18px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .experience-card {
+      padding: 24px;
+    }
+
+    .experience-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .experience-head h3 {
+      font-size: 1.1rem;
+    }
+
+    .experience-role {
+      color: #dce7ff;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .experience-date {
+      color: var(--accent2);
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .experience-card ul {
+      padding-left: 18px;
+    }
+
+    .experience-card li {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .project-block {
+      padding: 28px;
+      margin-bottom: 28px;
+    }
+
+    .project-header {
+      margin-bottom: 22px;
+    }
+
+    .project-header h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .project-header p {
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .hero-project-image {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto 18px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 12px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .project-content {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+    }
+
+    .project-text,
+    .project-skills {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .project-text h4,
+    .project-skills h4 {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    .project-text p,
+    .project-skills li {
+      color: var(--muted);
+    }
+
+    .project-skills ul {
+      padding-left: 18px;
+    }
+
+    .project-skills li + li {
+      margin-top: 8px;
+    }
+
+    .contact-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2,
+      .highlights,
+      .hero-meta,
+      .project-content,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 76px;
+      }
+
+      .nav {
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero-project-image {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-project-image,
+      .gallery img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <div class="brand-badge">YD</div>
+        <span>Yagnesh Dikshit</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Electrical & Computer Engineering Portfolio</div>
+          <h1><span>Engineering ideas into practical systems.</span></h1>
+          <p>
+            I’m Yagnesh Harshvadan Dikshit, an Electrical & Computer Engineering graduate with hands-on experience in power systems, industrial automation, and IoT-based monitoring solutions, along with strong interest in renewable energy and practical prototype development.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+            <a href="resume.pdf" download class="btn btn-secondary">Download Resume</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-panel">
+            <h3>Profile Snapshot</h3>
+            <div class="hero-meta">
+              <div class="meta-box">
+                <small>Experience</small>
+                <strong>1+ Year Industry Exposure</strong>
+              </div>
+              <div class="meta-box">
+                <small>Projects</small>
+                <strong>6+ Engineering Projects</strong>
+              </div>
+              <div class="meta-box">
+                <small>Focus</small>
+                <strong>Power Systems, Automation, IoT, Renewable Energy</strong>
+              </div>
+              <div class="meta-box">
+                <small>Location</small>
+                <strong>Glassboro, NJ</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <h3>What I Bring</h3>
+            <p style="color: var(--muted);">
+              Practical experience in electrical manufacturing, industrial systems, embedded monitoring, renewable energy applications, and prototype-driven engineering development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+          A portfolio centered on applied engineering, system integration, and real implementation.
+        </p>
+        <div class="about-card">
+          <p>
+            My work focuses on transforming engineering concepts into functional systems through hands-on design, integration, and testing. I enjoy working on electrical systems, industrial automation, renewable energy solutions, and embedded monitoring platforms. My project experience reflects a strong interest in building practical solutions that combine hardware, control logic, energy systems, and engineering problem solving.
+          </p>
+        </div>
+
+        <div class="highlights">
+          <div class="highlight">
+            <h3>6+ Engineering Projects</h3>
+            <p>System-level projects involving energy, automation, and embedded applications.</p>
+          </div>
+          <div class="highlight">
+            <h3>Industrial Systems</h3>
+            <p>Hands-on exposure to electrical manufacturing, drives, controls, and testing.</p>
+          </div>
+          <div class="highlight">
+            <h3>Embedded & IoT</h3>
+            <p>ESP32-based monitoring, sensor integration, and real-time visualization.</p>
+          </div>
+          <div class="highlight">
+            <h3>Renewable Energy</h3>
+            <p>Solar-powered systems, off-grid solutions, and energy-based prototypes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">
+          Engineering software, automation tools, and technical domains from my resume and project work.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Simulation & Engineering Tools</h3>
+            <ul>
+              <li>MATLAB Simulink</li>
+              <li>PVsyst</li>
+              <li>Cameo Systems Modeler</li>
+              <li>HOMER Pro</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Automation & Controls</h3>
+            <ul>
+              <li>PLC Programming</li>
+              <li>Unity Pro, SellPro, WPL Soft</li>
+              <li>HMI Software</li>
+              <li>AC Drives</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Engineering Domains</h3>
+            <ul>
+              <li>Power Systems</li>
+              <li>Electrical Design</li>
+              <li>Circuit Analysis</li>
+              <li>Renewable Energy Systems</li>
+              <li>Motor Drives</li>
+              <li>PCB Design</li>
+              <li>IoT Systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">
+          Professional and internship experience focused on electrical manufacturing, automation, motor systems, and power electronics.
+        </p>
+
+        <div class="experience-grid">
+          <div class="experience-card">
+            <div class="experience-head">
+              <div>
+                <h3>Torrent Electricals Ltd. (Torrent Group)</h3>
+                <div class="experience-role">Electrical Engineer – Production & Systems</div>
+              </div>
+              <div class="experience-date">May 2023 – Jul 2024</div>
+            </div>
+            <ul>
+              <li>Planned and coordinated production scheduling, work order execution, and system-level workflow for electrical equipment manufacturing, supporting daily output of 50+ industrial components.</li>
+              <li>Collaborated with engineering, operations, and production teams to improve process flow, reduce coordination delays, and support higher manufacturing efficiency.</li>
+              <li>Supported technical inspection, production-stage validation, and quality compliance activities for electrical assemblies and manufacturing processes.</li>
+              <li>Assisted in troubleshooting electrical and process-related issues, while maintaining structured production, testing, and system documentation.</li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-head">
+              <div>
+                <h3>SAI Power Company (Colin Group)</h3>
+                <div class="experience-role">Intern</div>
+              </div>
+              <div class="experience-date">Internship</div>
+            </div>
+            <ul>
+              <li>Studied the operating behavior, electrical characteristics, and performance response of three-phase induction motors used in industrial power applications.</li>
+              <li>Analyzed pump systems and associated motor-driven equipment to understand load conditions, efficiency considerations, and practical industrial operation.</li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-head">
+              <div>
+                <h3>CESS Automation (NIDC)</h3>
+                <div class="experience-role">Intern</div>
+              </div>
+              <div class="experience-date">Internship</div>
+            </div>
+            <ul>
+              <li>Worked on motor drive wiring, PLC logic setup, and HMI interfacing for industrial automation and machine-control applications.</li>
+              <li>Gained practical exposure to control architecture, signal interfacing, drive configuration, and automation-oriented system integration.</li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-head">
+              <div>
+                <h3>Eurotech Power Controls (Reliance Industries Ltd.)</h3>
+                <div class="experience-role">Intern</div>
+              </div>
+              <div class="experience-date">Internship</div>
+            </div>
+            <ul>
+              <li>Supported AC drive servicing, PCB fabrication, and testing of power-electronics-related components used in industrial control applications.</li>
+              <li>Contributed to retrofitting work on industrial machinery, strengthening hands-on understanding of electrical maintenance, hardware validation, and system-level servicing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title">Engineering Projects</h2>
+        <p class="section-subtitle">
+          Major system-level projects combining electrical design, embedded systems, renewable energy, and prototype development.
+        </p>
+
+        <div class="project-block">
+          <div class="project-header">
+            <h3>Off-Grid Smart Water Solution</h3>
+            <p>
+              Designed a portable solar-assisted water pumping and purification prototype for off-grid operation with battery-backed and portable backup power support.
+            </p>
+          </div>
+
+          <img
+            src="images/offgrid-1.jpg"
+            alt="Off-Grid Smart Water Solution field testing setup"
+            class="hero-project-image"
+          />
+
+          <div class="gallery">
+            <img src="images/offgrid-2.jpg" alt="Off-grid system components" />
+            <img src="images/offgrid-3.jpg" alt="Off-grid filter component" />
+            <img src="images/offgrid-4.jpg" alt="Off-grid filter housing" />
+            <img src="images/offgrid-5.jpg" alt="Off-grid filter core" />
+          </div>
+
+          <div class="project-content">
+            <div class="project-text">
+              <h4>Project Overview</h4>
+              <p>
+                This project was developed as a compact off-grid water collection and purification system intended for remote environments where conventional electrical infrastructure may not be available. The system integrates intake tubing, filtration hardware, portable flow components, and a field-deployable operating layout to support practical water collection and treatment. A key engineering feature is its hybrid power concept: the unit can operate using solar-supported input and can also continue running through portable backup sources such as power banks or small external battery devices, improving reliability under varying field conditions.
+              </p>
+            </div>
+
+            <div class="project-skills">
+              <h4>Key Elements</h4>
+              <ul>
+                <li>Solar-assisted pumping and filtration concept</li>
+                <li>Portable battery and backup power support</li>
+                <li>Compact modular filtration architecture</li>
+                <li>Off-grid deployment suitability</li>
+                <li>Field testing and practical system integration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-block">
+          <div class="project-header">
+            <h3>IoT Smart Energy Meter</h3>
+            <p>
+              Developed an embedded IoT-based smart metering prototype for real-time electrical parameter monitoring and remote data visualization.
+            </p>
+          </div>
+
+          <div class="project-content">
+            <div class="project-text">
+              <h4>Project Overview</h4>
+              <p>
+                This project demonstrates an IoT-enabled electricity monitoring system built around an ESP32 Wi-Fi microcontroller for signal acquisition, embedded processing, and wireless communication. The system uses an SCT-013 non-invasive AC current sensor and a ZMPT101B AC voltage sensor module to capture electrical measurements required for smart metering. The embedded controller processes the sensor inputs to estimate voltage, current, power, and cumulative energy usage in kWh, then transmits the processed data to the Blynk platform for real-time remote visualization. The project highlights practical integration of sensing, embedded computation, wireless communication, and cloud-connected monitoring in a compact smart energy application.
+              </p>
+            </div>
+
+            <div class="project-skills">
+              <h4>Key Elements</h4>
+              <ul>
+                <li>ESP32-based embedded control and communication</li>
+                <li>SCT-013 current sensing</li>
+                <li>ZMPT101B voltage sensing</li>
+                <li>Real-time power and energy estimation</li>
+                <li>IoT dashboard integration using Blynk</li>
+                <li>Remote electrical usage monitoring</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-block">
+          <div class="project-header">
+            <h3>Electric Bike Prototype</h3>
+            <p>
+              Designed and developed a low-power electric mobility prototype integrating structural fabrication, motor drive components, battery power, and energy management concepts.
+            </p>
+          </div>
+
+          <img
+            src="images/electric-1.jpg"
+            alt="Finished electric bike or scooter prototype"
+            class="hero-project-image"
+          />
+
+          <div class="gallery">
+            <img src="images/electric-2.jpg" alt="Electric frame fabrication" />
+            <img src="images/electric-3.jpg" alt="Hub motor winding and internal structure" />
+          </div>
+
+          <div class="project-content">
+            <div class="project-text">
+              <h4>Project Overview</h4>
+              <p>
+                This project focused on building a compact electric mobility platform through the integration of fabricated chassis elements, a hub motor drive system, battery-powered operation, and practical energy-management considerations. The development progressed from frame-level fabrication to a completed running prototype, providing hands-on exposure to electromechanical integration, structural assembly, and motor-driven transportation concepts. The project demonstrates practical understanding of electric drivetrain architecture, battery-supported mobility, and prototype-oriented engineering execution.
+              </p>
+            </div>
+
+            <div class="project-skills">
+              <h4>Key Elements</h4>
+              <ul>
+                <li>Electric mobility prototype design</li>
+                <li>Hub motor and wheel-drive integration</li>
+                <li>Battery pack and energy management concept</li>
+                <li>Chassis fabrication and structural assembly</li>
+                <li>Electromechanical system implementation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-block">
+          <div class="project-header">
+            <h3>Prototype Solar Water Boat</h3>
+            <p>
+              Built a renewable-energy-powered water prototype integrating solar generation, regulated power flow, rechargeable battery backup, and DC motor propulsion.
+            </p>
+          </div>
+
+          <div class="project-content">
+            <div class="project-text">
+              <h4>Project Overview</h4>
+              <p>
+                This project was developed as a small-scale experimental platform to demonstrate how solar energy can be harvested, conditioned, stored, and converted into mechanical motion for water-based mobility. A solar photovoltaic panel acts as the primary energy source, generating electrical power that is passed through a practical regulation stage such as a voltage regulator or DC-DC converter to provide stable electrical output. The regulated power supports a rechargeable battery, which acts as backup storage and can be charged when excess solar power is available. The stored or directly regulated electrical energy is then supplied to a DC motor connected to a propeller-based propulsion mechanism, producing thrust for movement across water. The project reflects practical system integration across renewable power generation, electrical conditioning, energy storage, and electromechanical propulsion.
+              </p>
+            </div>
+
+            <div class="project-skills">
+              <h4>Key Elements</h4>
+              <ul>
+                <li>Solar photovoltaic energy harvesting</li>
+                <li>Voltage regulation / DC-DC conversion</li>
+                <li>Rechargeable battery backup and charging</li>
+                <li>DC motor propulsion system</li>
+                <li>Propeller-based thrust generation</li>
+                <li>Renewable-energy mobility integration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">
+          Academic background aligned with electrical engineering, systems, automation, and applied technical development.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Rowan University</h3>
+            <ul>
+              <li>M.S. in Electrical & Computer Engineering</li>
+              <li>Expected Graduation: 2026</li>
+              <li>GPA: 3.67 / 4.0</li>
+              <li>Glassboro, New Jersey</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Charotar University of Science & Technology</h3>
+            <ul>
+              <li>Bachelor of Technology (B.Tech) in Electrical Engineering with Minor Specialization in Artificial Intelligence & Machine Learning</li>
+              <li>Graduated: April 2023</li>
+              <li>GPA: 8.35 / 10</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications & Activities</h2>
+        <p class="section-subtitle">
+          Technical learning, academic enrichment, and extracurricular achievements.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Technical Certifications</h3>
+            <ul>
+              <li>Machine Learning Onramp – MathWorks</li>
+              <li>Deep Learning Onramp – MathWorks</li>
+              <li>Simulink Onramp – MathWorks</li>
+              <li>Intro to Programming – Kaggle</li>
+              <li>Python – Kaggle</li>
+              <li>Pandas – Kaggle</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Activities & Achievements</h3>
+            <ul>
+              <li>NCC Cadet (Certificate-A, A Grade)</li>
+              <li>Scout Cadet (Rajya Puraskar)</li>
+              <li>Elementary Drawing Exam (A Grade)</li>
+              <li>Taekwondo Gold Medalist</li>
+              <li>Volunteer – Rowan University Technical Symposium</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          Open to professional opportunities, collaboration, and technical discussion.
+        </p>
+
+        <div class="contact-card">
+          <p><strong>Yagnesh Harshvadan Dikshit</strong></p>
+          <p>Glassboro, NJ</p>
+          <p><a href="tel:+18565269433">+1 856-526-9433</a></p>
+          <p><a href="mailto:yagneshdikshit1441@gmail.com">yagneshdikshit1441@gmail.com</a></p>
+
+          <div class="hero-actions" style="justify-content:center; margin-top:22px;">
+            <a href="mailto:yagneshdikshit1441@gmail.com" class="btn btn-primary">Email Me</a>
+            <a href="#home" class="btn btn-secondary">Back to Top</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Yagnesh Harshvadan Dikshit. Portfolio website.
+    </div>
+  </footer>
+</body>
+</html>
